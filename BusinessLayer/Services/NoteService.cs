@@ -118,4 +118,58 @@ public class NoteService : INoteService
 
         await _context.SaveChangesAsync();
     }
+
+    public async Task<List<NoteResponseDto>> GetDeletedAsync(int userId)
+    {
+        var notes = await _noteRepository.GetAllIncludingCollaborationsAsync(userId);
+        var deletedNotes = notes.Where(n => n.IsDeleted).ToList();
+
+        return deletedNotes.Select(n => new NoteResponseDto
+        {
+            NoteId = n.NoteId,
+            Title = n.Title,
+            Description = n.Description,
+            Color = n.Color,
+            IsPinned = n.IsPinned,
+            IsArchived = n.IsArchived,
+            IsDeleted = n.IsDeleted,
+            CreatedAt = n.CreatedAt,
+            UpdatedAt = n.UpdatedAt
+        }).ToList();
+    }
+
+    public async Task RestoreAsync(int noteId, int userId)
+    {
+        var note = await _noteRepository.GetByIdAsync(noteId, userId)
+            ?? throw new Exception("Note not found");
+
+        note.IsDeleted = false;
+        note.UpdatedAt = DateTime.UtcNow;
+
+        await _noteRepository.UpdateAsync(note);
+
+        _context.NoteHistories.Add(new NoteHistory
+        {
+            NoteId = note.NoteId,
+            Action = "Restored"
+        });
+
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task PermanentDeleteAsync(int noteId, int userId)
+    {
+        var note = await _noteRepository.GetByIdAsync(noteId, userId)
+            ?? throw new Exception("Note not found");
+
+        await _noteRepository.DeleteAsync(note);
+
+        _context.NoteHistories.Add(new NoteHistory
+        {
+            NoteId = note.NoteId,
+            Action = "Permanently Deleted"
+        });
+
+        await _context.SaveChangesAsync();
+    }
 }

@@ -59,6 +59,26 @@ namespace PresentationLayer.Fundoo.Controllers
             return Ok("Note moved to trash");
         }
 
+        [HttpGet("deleted")]
+        public async Task<IActionResult> GetDeleted()
+        {
+            return Ok(await _noteService.GetDeletedAsync(UserId));
+        }
+
+        [HttpPut("{noteId}/restore")]
+        public async Task<IActionResult> Restore(int noteId)
+        {
+            await _noteService.RestoreAsync(noteId, UserId);
+            return Ok("Note restored");
+        }
+
+        [HttpDelete("{noteId}/permanent")]
+        public async Task<IActionResult> PermanentDelete(int noteId)
+        {
+            await _noteService.PermanentDeleteAsync(noteId, UserId);
+            return Ok("Note permanently deleted");
+        }
+
         [HttpPost("{noteId}/labels/{labelId}")]
         public async Task<IActionResult> AddLabel(int noteId, int labelId)
         {

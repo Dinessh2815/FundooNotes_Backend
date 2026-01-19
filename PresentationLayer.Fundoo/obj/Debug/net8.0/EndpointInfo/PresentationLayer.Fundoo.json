@@ -371,6 +371,64 @@
         }
       }
     },
+    "/api/notes/deleted": {
+      "get": {
+        "tags": [
+          "Notes"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/notes/{noteId}/restore": {
+      "put": {
+        "tags": [
+          "Notes"
+        ],
+        "parameters": [
+          {
+            "name": "noteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/notes/{noteId}/permanent": {
+      "delete": {
+        "tags": [
+          "Notes"
+        ],
+        "parameters": [
+          {
+            "name": "noteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/notes/{noteId}/labels/{labelId}": {
       "post": {
         "tags": [

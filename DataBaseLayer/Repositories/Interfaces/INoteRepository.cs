@@ -9,6 +9,7 @@ namespace DataBaseLayer.Repositories.Interfaces
     {
         Task AddAsync(Note note);
         Task UpdateAsync(Note note);
+        Task DeleteAsync(Note note);
         Task<List<Note>> GetAllAsync(int userId);
 
         // Owner-only

@@ -31,6 +31,12 @@ namespace DataBaseLayer.Repositories.Implementations
             await _context.SaveChangesAsync();
         }
 
+        public async Task DeleteAsync(Note note)
+        {
+            _context.Notes.Remove(note);
+            await _context.SaveChangesAsync();
+        }
+
         public async Task<List<Note>> GetAllAsync(int userId)
         {
             return await _context.Notes

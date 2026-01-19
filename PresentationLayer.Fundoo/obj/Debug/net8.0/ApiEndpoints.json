@@ -330,5 +330,47 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PresentationLayer.Fundoo.Controllers.NotesController",
+    "Method": "PermanentDelete",
+    "RelativePath": "api/notes/{noteId}/permanent",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "noteId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PresentationLayer.Fundoo.Controllers.NotesController",
+    "Method": "Restore",
+    "RelativePath": "api/notes/{noteId}/restore",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "noteId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PresentationLayer.Fundoo.Controllers.NotesController",
+    "Method": "GetDeleted",
+    "RelativePath": "api/notes/deleted",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]
