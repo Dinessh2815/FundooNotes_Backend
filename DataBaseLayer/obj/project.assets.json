@@ -2715,23 +2715,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Windows 11\\.nuget\\packages\\": {},
+    "C:\\Users\\Windows\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Windows 11\\Documents\\DotNet-Training\\FundooProject\\FundooNotes\\DataBaseLayer\\DataBaseLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Windows\\Documents\\DotNet-Training\\FundooNotes_Project\\backend\\DataBaseLayer\\DataBaseLayer.csproj",
       "projectName": "DataBaseLayer",
-      "projectPath": "C:\\Users\\Windows 11\\Documents\\DotNet-Training\\FundooProject\\FundooNotes\\DataBaseLayer\\DataBaseLayer.csproj",
-      "packagesPath": "C:\\Users\\Windows 11\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Windows 11\\Documents\\DotNet-Training\\FundooProject\\FundooNotes\\DataBaseLayer\\obj\\",
+      "projectPath": "C:\\Users\\Windows\\Documents\\DotNet-Training\\FundooNotes_Project\\backend\\DataBaseLayer\\DataBaseLayer.csproj",
+      "packagesPath": "C:\\Users\\Windows\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Windows\\Documents\\DotNet-Training\\FundooNotes_Project\\backend\\DataBaseLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Windows 11\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Windows\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2740,7 +2740,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2790,7 +2789,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
