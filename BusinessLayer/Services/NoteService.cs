@@ -139,7 +139,7 @@ public class NoteService : INoteService
 
     public async Task RestoreAsync(int noteId, int userId)
     {
-        var note = await _noteRepository.GetByIdAsync(noteId, userId)
+        var note = await _noteRepository.GetDeletedByIdAsync(noteId, userId)
             ?? throw new Exception("Note not found");
 
         note.IsDeleted = false;
@@ -158,7 +158,7 @@ public class NoteService : INoteService
 
     public async Task PermanentDeleteAsync(int noteId, int userId)
     {
-        var note = await _noteRepository.GetByIdAsync(noteId, userId)
+        var note = await _noteRepository.GetDeletedByIdAsync(noteId, userId)
             ?? throw new Exception("Note not found");
 
         await _noteRepository.DeleteAsync(note);

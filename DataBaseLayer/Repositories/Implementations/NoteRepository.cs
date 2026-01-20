@@ -89,6 +89,15 @@ namespace DataBaseLayer.Repositories.Implementations
                 .Distinct()
                 .ToListAsync();
         }
+
+        public async Task<Note?> GetDeletedByIdAsync(int noteId, int userId)
+        {
+            return await _context.Notes
+                .FirstOrDefaultAsync(n =>
+                    n.NoteId == noteId &&
+                    n.UserId == userId &&
+                    n.IsDeleted);
+        }
     }
 
 

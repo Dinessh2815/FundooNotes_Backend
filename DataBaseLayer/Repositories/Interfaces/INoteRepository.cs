@@ -23,6 +23,8 @@ namespace DataBaseLayer.Repositories.Interfaces
 
         Task<List<Note>> GetDeletedAsync(int userId);
 
+        Task<Note?> GetDeletedByIdAsync(int noteId, int userId);
+
     }
 
 
