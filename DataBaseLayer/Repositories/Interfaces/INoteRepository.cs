@@ -21,6 +21,8 @@ namespace DataBaseLayer.Repositories.Interfaces
 
         Task<List<Note>> GetAllIncludingCollaborationsAsync(int userId);
 
+        Task<List<Note>> GetDeletedAsync(int userId);
+
     }
 
 

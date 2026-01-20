@@ -75,6 +75,20 @@ namespace DataBaseLayer.Repositories.Implementations
                     n.NoteId == noteId &&
                     !n.IsDeleted);
         }
+
+        public async Task<List<Note>> GetDeletedAsync(int userId)
+        {
+            return await _context.Notes
+                .Where(n =>
+                    n.IsDeleted &&
+                    (
+                        n.UserId == userId ||
+                        n.Collaborators.Any(c => c.UserId == userId)
+                    )
+                )
+                .Distinct()
+                .ToListAsync();
+        }
     }
 
 

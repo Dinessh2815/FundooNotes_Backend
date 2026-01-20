@@ -121,8 +121,7 @@ public class NoteService : INoteService
 
     public async Task<List<NoteResponseDto>> GetDeletedAsync(int userId)
     {
-        var notes = await _noteRepository.GetAllIncludingCollaborationsAsync(userId);
-        var deletedNotes = notes.Where(n => n.IsDeleted).ToList();
+        var deletedNotes = await _noteRepository.GetDeletedAsync(userId);
 
         return deletedNotes.Select(n => new NoteResponseDto
         {
